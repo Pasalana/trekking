@@ -1,0 +1,32 @@
+/* Typography Base de repspppppp
+   ========================================================================== */
+  body {
+    font-family: $raleway;
+  }
+  
+  h1 {
+    font-size: $xxxxx-large;
+  }
+  
+  h2 {
+    font-size: $xxxx-large;
+  }
+  
+  h3 {
+    font-size: $xxx-large;
+    font-family: $open-sans;
+  }
+
+  h4 {
+    font-size: $xx-large;
+  }
+  
+  p {
+    font-family: $open-sans;
+    font-size: $medium;
+  }
+  
+  small {
+    font-family: $open-sans;
+    font-size: $small;
+  }
