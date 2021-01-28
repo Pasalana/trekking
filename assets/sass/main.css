@@ -319,52 +319,22 @@ small {
 }
 
 .navigation {
+  padding: 2em 0 1em 8em;
   position: relative;
+  width: 100%;
+}
+
+.navigation a {
+  text-align: left;
+  color: #221D23;
+  text-decoration: none;
+  margin-right: 1rem;
 }
 
 .navigation__logo {
   position: absolute;
-  top: .9em;
-  left: 2.5em;
-}
-
-.collapsible {
-  text-align: right;
-}
-
-.collapsible label {
-  display: block;
-  padding-top: .5em;
-  padding-bottom: .5em;
-  padding-left: 1.5em;
-  font-size: 1.8em;
-}
-
-#menu {
-  display: none;
-}
-
-input:checked ~ .navigation__container {
-  max-height: 100%;
-}
-
-.navigation__container {
-  max-height: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
-.navigation__item a {
-  display: block;
-  text-align: left;
-  padding: .5em;
-  color: #221D23;
-  text-decoration: none;
-}
-
-.navigation__logo {
-  top: 1em;
-  right: 3em;
+  top: 2em;
+  left: 4em;
 }
 
 .collapsible label {
@@ -384,39 +354,74 @@ input:checked ~ .navigation__container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   margin: inherit;
   padding: inherit;
+}
+
+.navigation__list:first-child {
+  display: none;
+}
+
+@media (min-width: 576px) {
+  .navigation__list:first-child {
+    display: inherit;
+  }
 }
 
 .navigation__button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin: inherit;
-  padding: inherit;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  text-align: end;
 }
 
-.navigation__item a {
-  padding: .5em 1em;
-  font-size: 1rem;
-  font-weight: 400;
+.navigation__button a {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
+/**
+.navigation__container{
+  max-height: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#menu {
+  display: none;
+}
+input:checked ~ .navigation__container {
+  max-height: 100%;
+}
+.collapsible {
+  text-align: right;
+  label{
+    display: block;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    padding-left: 1.5em;
+    font-size: 1.8em;
+  }
+}
+*/
 .hero-section__imgen {
-  display: inline-block;
   width: 100vw;
+  position: relative;
 }
 
 .hero-section__main {
-  width: 40rem;
   padding: 0 5rem;
   position: relative;
+  margin-top: 1rem;
+}
+
+.hero-section__main p {
+  line-height: 2rem;
+  padding-top: 2rem;
 }
 
 .hero-section__title {
@@ -429,29 +434,90 @@ main .title {
   font-weight: 700;
 }
 
-main .main-graphic {
+main .main-graphic__img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 200px;
 }
 
-main .main-graphic__content {
-  width: 23rem;
+main .main-graphic__image .a-bar {
+  fill: #EE9480;
+  -webkit-animation: opacidad1 3s ease-in-out infinite;
+          animation: opacidad1 3s ease-in-out infinite;
+  -webkit-transition-duration: 2s;
+          transition-duration: 2s;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-timing-function: cubic-bezier(0, 0, 1, 1);
+          transition-timing-function: cubic-bezier(0, 0, 1, 1);
 }
 
-main .main-graphic_sub {
+@-webkit-keyframes opacidad1 {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.3;
+  }
+  60% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes opacidad1 {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.3;
+  }
+  60% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+main .main-graphic {
+  display: flex-box;
+  position: relative;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+main .main-graphic__text {
+  padding: 0 3rem;
+  margin: 3rem;
+}
+
+main .main-graphic__text .main-graphic__sub {
   font-weight: 700;
-  padding-bottom: 1rem;
+}
+
+main .main-graphic__text p {
+  line-height: 2rem;
+  padding-top: 2rem;
 }
 
 main .main-price__imgen {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100vw;
+  position: relative;
 }
 
 main .main-price__img {
@@ -459,9 +525,10 @@ main .main-price__img {
   z-index: -3;
 }
 
-main .main-price__img {
+main .logo {
   background-image: url(../../images/bg-price.svg);
   height: auto;
+  width: 100%;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -504,36 +571,37 @@ main .card .card__button {
 /* Footer Layout
    ========================================================================== */
 .footer {
-  height: 8rem;
+  height: 9rem;
   width: 100vw;
   padding: 4rem;
   margin-top: 2rem;
   background-color: #221D23;
   color: #FFF;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  display: -ms-grid;
+  display: grid;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.footer .footer__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-bottom: 1rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .footer .footer__item-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-right: 1rem;
 }
 
-.footer .footer__item p {
-  font-family: "Raleway", sans-serif;
+.footer .footer__item-list li {
+  padding-right: 2rem;
 }
 
 .button {

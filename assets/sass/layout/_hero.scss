@@ -1,15 +1,25 @@
+
+.hero-section__img{
+
+}
+
 .hero-section__imgen{
-    display: inline-block;
     width: 100vw;
-    
+    position: relative;
 
 }
 
 .hero-section__main{
-    width: 40rem;
     padding: 0 5rem;
-    position: relative;
+    position: relative; 
+    margin-top: 1rem; 
+    p{
+        line-height: 2rem;
+        padding-top: 2rem;
+    } 
 }
+
+
 .hero-section__title{
     font-weight: $bold;
 }

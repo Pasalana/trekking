@@ -1,54 +1,24 @@
 
 
 .navigation {
+  padding: 2em 0 1em 8em;
   position: relative;
-}
-.navigation__logo{
-  position: absolute;
-  top: .9em;
-  left: 2.5em;
-}
+  width: 100%;
 
-.collapsible {
-  text-align: right;
-  label{
-    display: block;
-    padding-top: .5em;
-    padding-bottom: .5em;
-    padding-left: 1.5em;
-    font-size: 1.8em;
-  }
-}
-#menu {
-  display: none;
-}
-
-input:checked ~ .navigation__container {
-  max-height: 100%;
-}
-
-.navigation__container{
-  max-height: 0;
-  padding: 0;
-  overflow: hidden;
-
-}
-
-.navigation__item {
   a {
-    display: block;
     text-align: left;
-    padding: .5em;
-    //fam, siz,weig,
     color: $raising-black;
     text-decoration: none;
+    margin-right: 1rem;
   }
 }
 
-.navigation__logo {
-  top: 1em;
-  right: 3em;
+.navigation__logo{
+  position: absolute;
+  top: 2em;
+  left: 4em;
 }
+
 .collapsible {
   label {
     display: none;
@@ -64,23 +34,48 @@ input:checked ~ .navigation__container {
 
 .navigation__list {
   display: flex;
-  justify-content: space-between;
   margin: inherit;
   padding: inherit;
+  &:first-child{
+    display: none;
+    @include respond-to('sm'){
+        display: inherit;
+    }
+  } 
 }
 
 .navigation__button{
   display: flex;
-  justify-content: space-between;
-  margin: inherit;
-  padding: inherit;
+  justify-content: flex-end;
+  text-align: end;
+  a{
+    align-self: center;
+  }
+  
 }
 
+/**
+.navigation__container{
+  max-height: 0;
+  padding: 0;
+  overflow: hidden;
+}
 
-.navigation__item {
-  a {
-    padding: .5em 1em;
-    font-size: 1rem;
-    font-weight: $regular;
+#menu {
+  display: none;
+}
+input:checked ~ .navigation__container {
+  max-height: 100%;
+}
+.collapsible {
+  text-align: right;
+  label{
+    display: block;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    padding-left: 1.5em;
+    font-size: 1.8em;
   }
 }
+*/
+

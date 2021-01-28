@@ -9,22 +9,58 @@ main{
         font-weight: $bold;
     }
 
-    .main-graphic{
+    .main-graphic__img {
         display: flex;
+        position: relative;
         justify-content: center;
+        align-items: center;
+        height: 200px;
     }
-    .main-graphic__content {
-        width: 23rem;
-    }
-    .main-graphic_sub{
-        font-weight: $bold;
-        padding-bottom: 1rem;
 
+    .main-graphic__image{
+
+        .a-bar{
+            fill: #EE9480;
+            animation: opacidad1 3s ease-in-out infinite;
+            transition-duration: 2s;
+            transition-property: all;
+            transition-timing-function: cubic-bezier(0,0,1,1);
+        }
+        @keyframes opacidad1 {
+            0% {opacity: 0};
+            30% {opacity: 0.3;}
+            60% {opacity: 0.7;}
+            100% {opacity: 1;}
+        }
     }
+
+
+    
+    .main-graphic{
+        display: flex-box;
+        position: relative;
+        justify-content: center;
+        width: 100%;
+    }
+    .main-graphic__text{
+        padding: 0 3rem;
+        margin: 3rem;
+        .main-graphic__sub{
+            font-weight: $bold;
+        }
+        p{
+            line-height: 2rem;
+            padding-top: 2rem;
+        } 
+    }
+
+
+    // seccion precios
 
     .main-price__imgen{
         display: flex;
-        width: 100vw;
+        position: relative;
+
     }
     .main-price__img{
         position: relative;
@@ -32,11 +68,10 @@ main{
 
     }
 
-
-
-    .main-price__img{
+    .logo{
         background-image: url(../../images/bg-price.svg);
         height: auto;
+        width: 100%;
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
